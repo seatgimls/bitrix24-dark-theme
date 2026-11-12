@@ -2,6 +2,9 @@
 
 ## 2026-11-12
 
+- Adapt license and invitation header widgets to the dark palette.
+- Translate README into Russian and add an optional per-user Windows CSS updater.
+
 - Keep native deadline chip backgrounds and state colors in task list grid rows.
 
 - Fix gallery titles, file names and secondary attachment captions in message replies.

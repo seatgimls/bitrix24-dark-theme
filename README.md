@@ -1,42 +1,68 @@
-# Bitrix24 Dark Theme
+# Тёмная тема Bitrix24
 
-Dark theme for desktop Bitrix24 chat and task interfaces, based on [skomaroh/bitrix24-dark-chat](https://github.com/skomaroh/bitrix24-dark-chat).
+Тема для чатов и задач десктопного Bitrix24. Основана на [skomaroh/bitrix24-dark-chat](https://github.com/skomaroh/bitrix24-dark-chat).
 
-## Choose a version
+## Какую версию выбрать
 
-- `default/user_style.css`: dark theme with project containers hidden in the main and compact recent-chat lists.
-- `hide-project-chats/user_style.css`: only hide project containers, with no dark theme or color changes. Suitable for the light theme.
+- [default/user_style.css](default/user_style.css) — тёмная тема со скрытием чатов проектов из общего и компактного списков.
+- [hide-project-chats/user_style.css](hide-project-chats/user_style.css) — только скрытие чатов проектов, без изменения цветов. Подходит для светлой темы.
 
-Install one version using the steps below. To keep an existing custom stylesheet, append the hide-only file instead of replacing existing rules.
+Это визуальное скрытие: участие в проектах, уведомления и общий счётчик непрочитанных остаются. Отдельные чаты задач и раздел проектов не скрываются. Нужна поддержка CSS `:has()` в клиенте.
 
-This is visual filtering, not disabling project chats. Messages, membership, notifications and aggregate unread totals remain unchanged. The dedicated project section and individual task chats are not hidden. Requires CSS `:has()` support in the desktop application's embedded browser.
+## Автоматическое обновление в Windows
 
-## Install
+Один раз скачайте [Update-Theme.ps1](scripts/Update-Theme.ps1), откройте PowerShell в папке с файлом и выполните:
 
-1. Back up your current `user_style.css`.
-2. Download `user_style.css` from the chosen version folder.
-3. Open the application's user-data folder with `Ctrl+Shift+L` (macOS: `Cmd+Shift+L`).
-4. Replace `user_style.css` in that folder.
-5. Reload the app window with `Ctrl+R`.
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Update-Theme.ps1 -Install
+```
 
-The usual Windows path is `%APPDATA%\Bitrix\Desktop\3.0`. Corporate builds may use a different folder: use the folder opened by the app.
+Обновлятор скачает выбранный CSS из этого репозитория и создаст задачу Windows для текущего пользователя: проверка при входе в систему и раз в час. Права администратора не нужны. По умолчанию используется тёмная тема и файл `%APPDATA%\Bitrix\Desktop\3.0\user_style.css`.
 
-## Changes
+Для версии без тёмной темы:
 
-- Search, forwarding, unread counters and profile-menu contrast.
-- Task forms, action menus, descriptions, checklists and attachment previews.
-- Compact message and attachment-caption composers.
-- The applications-panel button in the composer is hidden.
-- Kanban cards retain their original appearance; deadline chips use native Bitrix designs.
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Update-Theme.ps1 -Install -Variant hide-project-chats
+```
 
-## Compatibility
+Для B24Desktop или другого расположения укажите путь явно:
 
-Selectors were checked against local `im 26.1300.0` and `tasks 26.900.0` sources. Compatibility with every cloud or on-premise release is not guaranteed. Some screens were checked through user feedback; a full visual regression was not performed.
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Update-Theme.ps1 -Install -TargetPath "$env:LOCALAPPDATA\Programs\B24Desktop\user_style.css"
+```
 
-## Update and rollback
+Обновляется весь файл: личные дополнения в нём будут заменены. Исходник сохраняется рядом как `user_style.css.original`, предыдущая версия — как `user_style.css.previous`. При ошибке загрузки текущая тема сохраняется. Обычный клиент может потребовать `Ctrl+R`; B24Desktop подхватывает CSS без перезапуска.
 
-Back up your current stylesheet before replacing it. To roll back, restore that backup and reload the app. Git history also contains previous revisions.
+Скрипт хранит свою рабочую копию и настройки в `%LOCALAPPDATA%\Bitrix24ThemeUpdater`. Он обновляет только CSS, собственный код автоматически не меняет. Для разных профилей/вариантов одновременно используйте ручную установку: задача обновлятора одна на пользователя.
 
-## License
+Отключить автоматические обновления, оставив текущую тему:
 
-Apache-2.0. See the original LICENSE and the attribution in NOTICE.
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Update-Theme.ps1 -Uninstall
+```
+
+## Ручная установка
+
+1. Сохраните копию текущего `user_style.css`.
+2. Скачайте CSS выбранной версии.
+3. В обычном десктопном клиенте откройте папку данных через `Ctrl+Shift+L` (macOS: `Cmd+Shift+L`).
+4. Замените в ней `user_style.css`.
+5. Перезагрузите окно через `Ctrl+R`.
+
+Обычный путь Windows: `%APPDATA%\Bitrix\Desktop\3.0`. В корпоративных сборках путь может отличаться. B24Desktop читает CSS из папки рядом со своим EXE.
+
+Чтобы сохранить свои стили, файл версии только со скрытием проектов можно дописать в конец существующего CSS вручную.
+
+## Что изменено
+
+Поиск, пересылка, меню, формы задач, описания, чек-листы, вложения и цитаты адаптированы к тёмной теме. Кнопка панели приложений в поле сообщения скрыта. Карточки канбана сохраняют исходный вид, сроки используют штатные цвета Битрикса. Намеренное жирное выделение сообщений сохраняется.
+
+## Совместимость и откат
+
+Селекторы сверены с исходниками `im 26.1300.0` и `tasks 26.900.0`. На других версиях возможны отличия. Полной визуальной проверки всех экранов не проводилось.
+
+Для отката отключите обновлятор, верните резервную копию на место `user_style.css` и перезагрузите окно. Предыдущие версии также доступны в истории Git.
+
+## Лицензия
+
+Apache-2.0. Исходная лицензия находится в [LICENSE](LICENSE), сведения об авторстве — в [NOTICE](NOTICE).

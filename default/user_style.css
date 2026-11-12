@@ -3984,3 +3984,47 @@
 :root .bx-im-message-quote .bx-im-message-quote__file-size {
     color: var(--text-secondary);
 }
+
+/* Header widgets: license, partner, employees and company structure cards. */
+:root .license-widget-item--main,
+:root .license-widget-section-with-box .license-widget-inner,
+:root .intranet-invitation-widget-item--active,
+:root .intranet-invitation-widget-item--emp,
+:root .intranet-invitation-widget-item--index,
+:root .intranet-invitation-widget-mode {
+    background: var(--surface-secondary);
+}
+:root .license-widget-item .license-widget-item-name,
+:root .license-widget-item .license-widget-item-name a,
+:root .intranet-invitation-widget-item .intranet-invitation-widget-item-name,
+:root .intranet-invitation-widget-item .intranet-invitation-widget-head-title,
+:root .intranet-invitation-widget-index-value,
+:root .intranet-invitation-widget-mode-value {
+    color: var(--text-primary);
+}
+:root .license-widget-item .license-widget-item-text,
+:root .license-widget-item .license-widget-item-link-text:not(.--active),
+:root .intranet-invitation-widget-item .intranet-invitation-widget-item-text,
+:root .intranet-invitation-widget-item .intranet-invitation-widget-item-link-text,
+:root .intranet-invitation-widget-item .intranet-invitation-widget-item-num {
+    color: var(--text-secondary);
+    opacity: 1;
+}
+:root .license-widget-item .license-widget-inner .license-widget-item-btn,
+:root .license-widget-item:hover .license-widget-inner .license-widget-item-btn,
+:root .license-widget-item .license-widget-inner .license-widget-item-btn:hover,
+:root .intranet-invitation-widget-item .intranet-invitation-widget-item-btn,
+:root .intranet-invitation-widget-item:hover .intranet-invitation-widget-item-btn,
+:root .intranet-invitation-widget-item:hover .intranet-invitation-widget-item-btn:hover {
+    background: var(--surface-tertiary);
+    color: var(--text-primary);
+    border-color: var(--ui-border);
+}
+:root .intranet-invitation-widget-item--collab.--project {
+    background: var(--surface-secondary);
+}
+/* Keep the invitation banner's white text on its native turquoise background. */
+:root .intranet-invitation-widget-invite-main .intranet-invitation-widget-item-name,
+:root .intranet-invitation-widget-invite-main .intranet-invitation-widget-item-link-text {
+    color: var(--button-primary-text);
+}
