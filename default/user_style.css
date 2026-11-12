@@ -3974,3 +3974,13 @@
     --im-dialog-chat__pin_scrollbar: var(--surface-message-pinned);
     --im-dialog-chat__pin_scrollbar_thumb: var(--state-hover);
 }
+
+/* Reply attachment captions use light-theme tokens independently of quote text. */
+:root .bx-im-message-quote .bx-im-message-quote__gallery-caption-title,
+:root .bx-im-message-quote .bx-im-message-quote__file-name {
+    color: var(--text-primary);
+}
+:root .bx-im-message-quote .bx-im-message-quote__gallery-caption-count,
+:root .bx-im-message-quote .bx-im-message-quote__file-size {
+    color: var(--text-secondary);
+}

@@ -2,6 +2,8 @@
 
 ## 2026-11-12
 
+- Fix gallery titles, file names and secondary attachment captions in message replies.
+
 - Correct the actual TasksPopup background layer. Match outgoing text contrast to incoming text; retain native font weights and intentional bold formatting.
 
 - Improve pinned quotes and pin-list contrast.
