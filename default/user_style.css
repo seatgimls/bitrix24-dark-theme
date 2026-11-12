@@ -207,7 +207,7 @@
 }
 
 .bx-im-message-base__container.--self .bx-im-message-base__text {
-	color: var(--button-primary-text);
+	color: var(--text-tertiary);
 }
 
 .bx-im-message-base__container .bx-im-message-base__body.--transparent {
@@ -227,7 +227,7 @@
 }
 
 .bx-im-message-base__container.--self .bx-im-message-default-content__text {
-	--im-message-default-content__font-color_message: var(--text-primary);
+	--im-message-default-content__font-color_message: var(--text-tertiary);
 }
 
 .bx-im-message-default-content__text {
@@ -2583,11 +2583,11 @@
 
 /* Message state aliases for the current wrap markup. */
 .bx-im-message-base__wrap.--self .bx-im-message-base__text {
-	color: var(--button-primary-text);
+	color: var(--text-tertiary);
 }
 
 .bx-im-message-base__wrap.--self .bx-im-message-default-content__text {
-	--im-message-default-content__font-color_message: var(--text-primary);
+	--im-message-default-content__font-color_message: var(--text-tertiary);
 }
 
 .bx-im-message-base__wrap.--opponent:first-child .bx-im-message-base__body:before,
@@ -3257,7 +3257,7 @@
     color: var(--text-tertiary);
 }
 .bx-im-message-base__wrap.--self .bx-im-message-text-content__container {
-    color: var(--text-primary);
+    color: var(--text-tertiary);
 }
 .bx-im-message-base__wrap .bx-im-message-text-content__container a {
     color: var(--link-primary);
@@ -3949,15 +3949,6 @@
 }
 
 
-/* Normalize outgoing text, including bold markup; keep sender names unchanged.
- * Both wrapper and container state locations occur in desktop messenger versions.
- */
-:root :is(.bx-im-message-base__wrap, .bx-im-message-base__container).--self
-    :is(.bx-im-message-text-content__container, .bx-im-message-default-content__text),
-:root :is(.bx-im-message-base__wrap, .bx-im-message-base__container).--self
-    :is(.bx-im-message-text-content__container, .bx-im-message-default-content__text) :is(b, strong, span, p) {
-    font-weight: 400;
-}
 /* Pin notices render a quote inside a system-message bubble. */
 :root .bx-im-message-base__wrap.--system .bx-im-message-base__body:not(.--transparent) {
     background-color: var(--surface-message-pinned);

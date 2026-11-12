@@ -2,9 +2,9 @@
 
 ## 2026-11-12
 
-- Correct the actual TasksPopup background layer and outgoing nested bold text; support both desktop message state locations.
+- Correct the actual TasksPopup background layer. Match outgoing text contrast to incoming text; retain native font weights and intentional bold formatting.
 
-- Use normal weight for own message bodies; improve pinned quotes and pin-list contrast.
+- Improve pinned quotes and pin-list contrast.
 - Fix the detached task-views popup contrast.
 - Hide project containers in the main and compact recent lists without hiding task chats.
 - Add a separate hide-only stylesheet for users of the light theme.
