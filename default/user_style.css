@@ -4038,3 +4038,32 @@
 :root :is(.bx-im-message-base__wrap, .bx-im-message-base__container, .bx-im-message-quote) .bx-im-attach-file__size {
     color: var(--text-secondary);
 }
+
+/* Contact-integrator dialog is a separate popup from the license widget. */
+:root .bitrix24-partner__popup,
+:root .bitrix24-partner__popup .popup-window-content {
+    background-color: var(--surface-secondary);
+    color: var(--text-tertiary);
+}
+:root .bitrix24-partner__popup .popup-window-titlebar-text,
+:root .bitrix24-partner__popup .bitrix24-partner__popup-content_name {
+    color: var(--text-primary);
+}
+:root .bitrix24-partner__popup .bitrix24-partner__popup-content_title,
+:root .bitrix24-partner__popup .bitrix24-partner__popup-content_desc,
+:root .bitrix24-partner__popup .bitrix24-partner__popup-content_description {
+    color: var(--text-tertiary);
+}
+:root .bitrix24-partner__popup a.bitrix24-partner__popup-content_info-block-info-value,
+:root .bitrix24-partner__popup a.bitrix24-partner__popup-content_link {
+    color: var(--link-primary);
+}
+:root .bitrix24-partner__popup .bitrix24-partner__popup-content_info-block-icon-wrapper {
+    background: var(--surface-tertiary);
+}
+:root .bitrix24-partner__popup .bitrix24-partner__popup-content_info-block-icon-wrapper .ui-icon-set {
+    --ui-icon-set__icon-color: var(--link-primary);
+}
+:root .bitrix24-partner__popup .copy-icon:not(.copied) .ui-icon-set {
+    --ui-icon-set__icon-color: var(--text-secondary);
+}
