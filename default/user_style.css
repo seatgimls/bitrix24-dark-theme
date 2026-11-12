@@ -3913,20 +3913,26 @@
 }
 
 
-/* Task views popup is detached from the task card. */
-:root .tasks-entities-demonstrator__popup_user-actions {
-    background-color: var(--surface-secondary);
-    color: var(--text-primary);
+/* Task views use TasksPopup, whose separate background covers the popup root. */
+:root .tasks-popup.tasks-entities-demonstrator__popup_user-actions {
+    --color-popup-bg: var(--surface-secondary);
     --ui-color-base-1: var(--text-primary);
     --ui-color-base-3: var(--text-secondary);
     --ui-color-base-4: var(--text-secondary);
+    --ui-color-base-8: var(--surface-secondary);
     --ui-color-divider-default: var(--ui-border);
+    color: var(--text-primary);
 }
+:root .tasks-entities-demonstrator__popup_user-actions > .tasks-popup__bg,
 :root .tasks-entities-demonstrator__popup_user-actions .popup-window-content {
     background-color: var(--surface-secondary);
 }
 :root .tasks-entities-demonstrator__popup_user-actions .tasks-entities-picker__entity-text-name {
     color: var(--text-primary);
+}
+:root .tasks-entities-demonstrator__popup_user-actions .tasks-entities-picker__head-text,
+:root .tasks-entities-demonstrator__popup_user-actions .tasks-entities-picker__item-tag {
+    color: var(--text-secondary);
 }
 
 /* Hide project containers in main and compact recent-chat lists.
@@ -3943,10 +3949,14 @@
 }
 
 
-/* Own message body uses normal weight; explicit <b>/<strong> is preserved. */
-:root .bx-im-message-base__wrap.--self .bx-im-message-text-content__container,
-:root .bx-im-message-base__wrap.--self .bx-im-message-default-content__text {
-    font-weight: var(--im-font-weight-normal, 400);
+/* Normalize outgoing text, including bold markup; keep sender names unchanged.
+ * Both wrapper and container state locations occur in desktop messenger versions.
+ */
+:root :is(.bx-im-message-base__wrap, .bx-im-message-base__container).--self
+    :is(.bx-im-message-text-content__container, .bx-im-message-default-content__text),
+:root :is(.bx-im-message-base__wrap, .bx-im-message-base__container).--self
+    :is(.bx-im-message-text-content__container, .bx-im-message-default-content__text) :is(b, strong, span, p) {
+    font-weight: 400;
 }
 /* Pin notices render a quote inside a system-message bubble. */
 :root .bx-im-message-base__wrap.--system .bx-im-message-base__body:not(.--transparent) {
