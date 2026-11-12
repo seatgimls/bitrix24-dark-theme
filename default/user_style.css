@@ -4028,3 +4028,13 @@
 :root .intranet-invitation-widget-invite-main .intranet-invitation-widget-item-link-text {
     color: var(--button-primary-text);
 }
+
+/* Files can also render through BaseFileItem or AttachFile inside replies. */
+:root :is(.bx-im-message-base__wrap, .bx-im-message-base__container, .bx-im-message-quote) .bx-im-base-file-item__title,
+:root :is(.bx-im-message-base__wrap, .bx-im-message-base__container, .bx-im-message-quote) .bx-im-attach-file__name {
+    color: var(--text-primary);
+}
+:root :is(.bx-im-message-base__wrap, .bx-im-message-base__container, .bx-im-message-quote) .bx-im-base-file-item__size,
+:root :is(.bx-im-message-base__wrap, .bx-im-message-base__container, .bx-im-message-quote) .bx-im-attach-file__size {
+    color: var(--text-secondary);
+}

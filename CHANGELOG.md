@@ -2,6 +2,8 @@
 
 ## 2026-11-12
 
+- Fix BaseFileItem and AttachFile name/size contrast in messages and replies.
+
 - Adapt license and invitation header widgets to the dark palette.
 - Translate README into Russian and add an optional per-user Windows CSS updater.
 
