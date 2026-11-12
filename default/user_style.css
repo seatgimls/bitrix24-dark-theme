@@ -1460,22 +1460,22 @@
 	--ui-color-text-primary: var(--text-primary);
 }
 
-/* UI Chip */
-.ui-chip {
+/* UI Chip: grid rows retain native chip state colors. */
+.ui-chip:not(:where(.main-grid-row .ui-chip)) {
 	--background: var(--ui-button-primary);
 }
 
-.ui-chip.--filled,
-.ui-chip.--outline {
+.ui-chip:not(:where(.main-grid-row .ui-chip)).--filled,
+.ui-chip:not(:where(.main-grid-row .ui-chip)).--outline {
 	--text-color: var(--text-tertiary);
 	--text-color-hover: var(--text-primary);
 }
 
-.ui-chip.--outline {
+.ui-chip:not(:where(.main-grid-row .ui-chip)).--outline {
 	--border-color: var(--ui-button-primary);
 }
 
-.ui-chip.--filled {
+.ui-chip:not(:where(.main-grid-row .ui-chip)).--filled {
 	--background: var(--ui-video-button);
 	--border-color: var(--ui-video-button-hover);
 }

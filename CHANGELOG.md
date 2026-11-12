@@ -2,6 +2,8 @@
 
 ## 2026-11-12
 
+- Keep native deadline chip backgrounds and state colors in task list grid rows.
+
 - Fix gallery titles, file names and secondary attachment captions in message replies.
 
 - Correct the actual TasksPopup background layer. Match outgoing text contrast to incoming text; retain native font weights and intentional bold formatting.
