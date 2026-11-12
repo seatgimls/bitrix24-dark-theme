@@ -1,0 +1,12 @@
+/* Hide project containers in main and compact recent-chat lists.
+ * No theme colors. Individual task chats and the project section are retained.
+ * Visual filtering only: notifications and aggregate unread totals are unchanged.
+ */
+[data-testid="im-list-recent"] .bx-im-list-recent-item__wrap:has(
+    .bx-im-list-recent-item__avatar_container .ui-avatar.--project
+),
+.bx-im-list-recent-compact__container .bx-im-list-recent-compact-item__wrap:has(
+    .bx-im-list-recent-compact-item__avatar_container .ui-avatar.--project
+) {
+    display: none;
+}

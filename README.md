@@ -2,10 +2,19 @@
 
 Dark theme for desktop Bitrix24 chat and task interfaces, based on [skomaroh/bitrix24-dark-chat](https://github.com/skomaroh/bitrix24-dark-chat).
 
+## Choose a version
+
+- `default/user_style.css`: dark theme with project containers hidden in the main and compact recent-chat lists.
+- `hide-project-chats/user_style.css`: only hide project containers, with no dark theme or color changes. Suitable for the light theme.
+
+Install one version using the steps below. To keep an existing custom stylesheet, append the hide-only file instead of replacing existing rules.
+
+This is visual filtering, not disabling project chats. Messages, membership, notifications and aggregate unread totals remain unchanged. The dedicated project section and individual task chats are not hidden. Requires CSS `:has()` support in the desktop application's embedded browser.
+
 ## Install
 
 1. Back up your current `user_style.css`.
-2. Download `default/user_style.css` from this repository.
+2. Download `user_style.css` from the chosen version folder.
 3. Open the application's user-data folder with `Ctrl+Shift+L` (macOS: `Cmd+Shift+L`).
 4. Replace `user_style.css` in that folder.
 5. Reload the app window with `Ctrl+R`.

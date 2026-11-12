@@ -3911,3 +3911,65 @@
 :root .tasks-check-list-wrapper.--sheet .ui-text-editor-placeholder {
     color: var(--text-secondary);
 }
+
+
+/* Task views popup is detached from the task card. */
+:root .tasks-entities-demonstrator__popup_user-actions {
+    background-color: var(--surface-secondary);
+    color: var(--text-primary);
+    --ui-color-base-1: var(--text-primary);
+    --ui-color-base-3: var(--text-secondary);
+    --ui-color-base-4: var(--text-secondary);
+    --ui-color-divider-default: var(--ui-border);
+}
+:root .tasks-entities-demonstrator__popup_user-actions .popup-window-content {
+    background-color: var(--surface-secondary);
+}
+:root .tasks-entities-demonstrator__popup_user-actions .tasks-entities-picker__entity-text-name {
+    color: var(--text-primary);
+}
+
+/* Hide project containers in main and compact recent-chat lists.
+ * No theme colors. Individual task chats and the project section are retained.
+ * Visual filtering only: notifications and aggregate unread totals are unchanged.
+ */
+[data-testid="im-list-recent"] .bx-im-list-recent-item__wrap:has(
+    .bx-im-list-recent-item__avatar_container .ui-avatar.--project
+),
+.bx-im-list-recent-compact__container .bx-im-list-recent-compact-item__wrap:has(
+    .bx-im-list-recent-compact-item__avatar_container .ui-avatar.--project
+) {
+    display: none;
+}
+
+
+/* Own message body uses normal weight; explicit <b>/<strong> is preserved. */
+:root .bx-im-message-base__wrap.--self .bx-im-message-text-content__container,
+:root .bx-im-message-base__wrap.--self .bx-im-message-default-content__text {
+    font-weight: var(--im-font-weight-normal, 400);
+}
+/* Pin notices render a quote inside a system-message bubble. */
+:root .bx-im-message-base__wrap.--system .bx-im-message-base__body:not(.--transparent) {
+    background-color: var(--surface-message-pinned);
+}
+:root .bx-im-message-base__wrap.--system .bx-im-message-quote {
+    --bx-im-message-quote__background: var(--surface-message);
+    --bx-im-message-quote-with-context__background: var(--surface-message);
+    --bx-im-message-quote__color: var(--text-tertiary);
+    --bx-im-message-quote__color_name: var(--text-accent);
+    --bx-im-message-quote__color_time: var(--text-secondary);
+    --bx-im-message-quote__border-color: var(--ui-border);
+    --bx-im-message-quote-toggle__background: none;
+}
+:root .bx-im-message-base__wrap.--system .bx-im-message-status__date {
+    color: var(--text-secondary);
+}
+:root .bx-im-dialog-chat__pinned_item {
+    --im-dialog-chat__font-color_pinned-text: var(--text-primary);
+    --im-dialog-chat__font-color_pinned-message-text: var(--text-tertiary);
+    --im-dialog-chat__pin_border: var(--ui-border);
+}
+:root .bx-im-dialog-chat__pinned_list {
+    --im-dialog-chat__pin_scrollbar: var(--surface-message-pinned);
+    --im-dialog-chat__pin_scrollbar_thumb: var(--state-hover);
+}
