@@ -4067,3 +4067,57 @@
 :root .bitrix24-partner__popup .copy-icon:not(.copied) .ui-icon-set {
     --ui-icon-set__icon-color: var(--text-secondary);
 }
+
+/* Open Lines quick replies use their own popup and system controls. */
+:root .bx-imol-quick-reply-popup__container {
+    --ui-color-palette-black-base: var(--text-primary);
+    --ui-color-palette-gray-10: var(--ui-border);
+    --ui-color-palette-gray-20: var(--ui-border);
+    --ui-color-palette-gray-40: var(--text-secondary);
+    --ui-color-accent-soft-blue-3: var(--state-active);
+    --ui-color-base-1: var(--text-primary);
+    --ui-color-base-2: var(--text-tertiary);
+    --ui-color-base-3: var(--text-secondary);
+    --ui-color-base-4: var(--text-secondary);
+    --ui-color-base-7: var(--surface-input);
+    --ui-color-bg-content-primary: var(--surface-input);
+}
+
+:root .bx-imol-quick-reply-popup__search .ui-system-input.--light-grey {
+    --background: var(--surface-input);
+    --text-color: var(--text-primary);
+    --placeholder-color: var(--text-secondary);
+    --border-color: var(--ui-border);
+    --border-color-active: var(--link-accent, var(--text-accent));
+}
+
+:root .bx-imol-quick-reply-popup__filters .ui-chip.--outline {
+    --background: var(--surface-tertiary);
+    --text-color: var(--text-tertiary);
+    --text-color-hover: var(--text-primary);
+    --border-color: var(--ui-border);
+    --border-color-hover: var(--text-secondary);
+}
+
+:root .bx-imol-quick-reply-popup__filters .ui-chip.--outline-accent {
+    --background: var(--state-active);
+    --text-color: var(--link-primary);
+    --text-color-hover: var(--text-primary);
+    --border-color: var(--text-accent);
+    --border-color-hover: var(--link-primary);
+}
+
+
+/* Open Lines header controls have a separate icon palette. */
+:root .bx-imol-header-button_container-list {
+    --imol-header-button__color-icon: var(--text-primary);
+    --imol-header-button__color_icon-active: var(--text-accent);
+}
+
+:root .bx-imol-header-button_container-list .bx-imol-header-button__icon-container:not(:disabled) {
+    opacity: 1;
+}
+
+:root .bx-imol-quick-reply-popup__item {
+    border-top-color: color-mix(in srgb, var(--text-secondary) 25%, transparent);
+}
